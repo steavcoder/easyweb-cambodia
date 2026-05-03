@@ -11,10 +11,15 @@ type Props = { brand: string; logo: LogoAssets };
 
 const nav: { href: string; label: string; activeOn?: (path: string) => boolean }[] = [
   { href: "/", label: "Home", activeOn: (p) => p === "/" },
-  { href: "/about", label: "About", activeOn: (p) => p === "/about" },
+  { href: "/about", label: "About Us", activeOn: (p) => p === "/about" },
   { href: "/services", label: "Services", activeOn: (p) => p === "/services" },
-  { href: "/packages", label: "Packages", activeOn: (p) => p === "/packages" },
-  { href: "/contact", label: "Contact", activeOn: (p) => p === "/contact" },
+  { href: "/portfolio", label: "Portfolio", activeOn: (p) => p === "/portfolio" },
+  {
+    href: "/pricing",
+    label: "Pricing",
+    activeOn: (p) => p === "/pricing" || p === "/packages",
+  },
+  { href: "/contact", label: "Contact Us", activeOn: (p) => p === "/contact" },
 ];
 
 export function SiteHeader({ brand, logo }: Props) {
@@ -67,7 +72,7 @@ export function SiteHeader({ brand, logo }: Props) {
             href="/contact"
             className="btn-contact-outline group inline-flex items-center justify-center gap-1 rounded-full px-3 py-2 text-xs font-semibold shadow-sm whitespace-nowrap sm:gap-1.5 sm:px-5 sm:py-2.5 sm:text-sm"
           >
-            Contact Us
+            Get a Quote
             <ArrowRight
               className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-0.5 sm:h-4 sm:w-4"
               strokeWidth={2.25}

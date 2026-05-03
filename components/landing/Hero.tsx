@@ -209,7 +209,7 @@ export function Hero({
                 href="#contact"
                 className="btn-contact-outline group inline-flex h-12 w-full items-center justify-center gap-2 rounded-full px-8 text-base font-semibold shadow-sm sm:h-14 sm:w-auto sm:min-w-[180px] sm:px-10 dark:shadow-none"
               >
-                Contact Now
+                Contact Us
                 <ArrowRight
                   className="h-5 w-5 shrink-0 transition-transform group-hover:translate-x-0.5"
                   strokeWidth={2.25}

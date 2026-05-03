@@ -17,12 +17,14 @@ export function CtaSection({ title, body, buttonLabel, href }: Props) {
       style={{ backgroundColor: BRAND_GREEN }}
     >
       <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          {title}
-        </h2>
-        <p className="mx-auto mt-4 max-w-xl text-pretty text-base leading-relaxed text-white/90 sm:text-lg">
-          {body}
-        </p>
+        <header>
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            {title}
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-pretty text-base leading-relaxed text-white/90 sm:text-lg">
+            {body}
+          </p>
+        </header>
         <Link
           href={href}
           className="mt-10 inline-flex h-14 items-center justify-center gap-2 rounded-full bg-white px-10 text-base font-semibold shadow-lg transition hover:bg-zinc-100"

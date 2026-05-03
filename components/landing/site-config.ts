@@ -25,38 +25,47 @@ export const siteConfig = {
     trustLine: "Trusted by startups, SMEs, and local businesses across Cambodia.",
   },
   serviceShowcase: {
-    titleBefore: "We Provide The Best ",
-    titleHighlight: "Services",
+    titleBefore: "What We Do To Help Your ",
+    titleHighlight: "Business Grow",
     subtitle:
-      "Websites, mobile apps, AI tools, and custom systems — built for clarity, speed, and outcomes you can measure.",
+      "We help small businesses go online, attract more customers, and grow faster with simple, effective digital solutions.",
+  
     items: [
       {
-        title: "Web Development",
+        title: "Business Websites",
         bullets: [
-          "Modern business websites",
-          "Fast, SEO-friendly delivery",
-          "Next.js / React solutions",
+          "Professional website in 2–3 days",
+          "Mobile-friendly & fast loading",
+          "Built to attract more customers",
         ] as const,
         icon: "laptop" as const,
-        iconBg: "#EAB308",
       },
       {
-        title: "Mobile Apps",
-        bullets: ["Android & iOS apps", "Business & field tracking apps"] as const,
-        icon: "smartphone" as const,
-        iconBg: "#009689",
-      },
-      {
-        title: "AI Solutions",
-        bullets: ["Chatbots for customer support", "Workflow automation", "Smart assistants"] as const,
-        icon: "sparkles" as const,
-        iconBg: "#A855F7",
-      },
-      {
-        title: "System Development",
-        bullets: ["Custom dashboards", "CRM / ERP-style tools", "Business automation"] as const,
+        title: "Landing Pages",
+        bullets: [
+          "Perfect for promotions & campaigns",
+          "Simple and high-converting design",
+          "Quick setup for fast results",
+        ] as const,
         icon: "layout" as const,
-        iconBg: "#F97316",
+      },
+      {
+        title: "Social Media Setup",
+        bullets: [
+          "Facebook & Telegram business setup",
+          "Customer contact optimization",
+          "Ready-to-use online presence",
+        ] as const,
+        icon: "smartphone" as const,
+      },
+      {
+        title: "Custom Solutions",
+        bullets: [
+          "Simple business tools & systems",
+          "Automation for daily tasks",
+          "Built based on your needs",
+        ] as const,
+        icon: "sparkles" as const,
       },
     ],
   },
@@ -64,7 +73,7 @@ export const siteConfig = {
     headline: "We provide you the best experience",
     body:
       "From discovery to launch, we focus on clear scope, modern tooling, and outcomes you can measure. Whether it’s a marketing site, mobile app, or internal system — we ship work that looks sharp and runs reliably for teams in Cambodia and beyond.",
-    imageSrc: "/about-hero.svg",
+    imageSrc: "/placeholder.png",
     imageAlt: "EasyWeb Cambodia — digital projects and collaboration",
     stats: [
       { value: "15+", label: "Projects delivered" },
@@ -75,29 +84,50 @@ export const siteConfig = {
   },
   pricingSection: {
     eyebrow: "Packages",
-    title: "Website pricing — clear tiers",
+    title: "Simple Pricing. Fast Results.",
     subtitle:
-      "Fixed packages for sites that launch fast. Need apps, AI, or custom systems? Use Start a Project and we’ll scope it together.",
+      "Get your business online in just 2–3 days with affordable, professional websites. No confusion, no hidden costs — just results.",
   },
+  
   pricing: [
     {
       name: "Starter Website",
       price: 79,
-      description: "Single-page or simple multi-section site, contact info, and social links.",
-      highlights: ["1–3 sections", "Mobile-friendly", "Hosting guidance"],
+      description:
+        "Perfect for new businesses that need a simple online presence to start getting customers.",
+      highlights: [
+        "1-page professional website",
+        "Mobile-friendly design",
+        "Contact + Telegram/WhatsApp button",
+        "Fast delivery (2–3 days)",
+      ],
     },
     {
       name: "Standard Website",
       price: 109,
-      description: "Ideal for service businesses and small catalogs with more structure.",
-      highlights: ["Up to 5 pages", "Gallery or services grid", "Basic SEO setup"],
+      description:
+        "Best for growing businesses that want a stronger brand and more content to attract customers.",
+      highlights: [
+        "Up to 5 pages (Home, About, Services, Contact)",
+        "Clean modern design",
+        "Services or gallery section",
+        "Basic SEO setup",
+        "2 revisions included",
+      ],
       featured: true,
     },
     {
       name: "Premium Website",
       price: 149,
-      description: "More polish, more sections, and room to grow as your business grows.",
-      highlights: ["Rich layouts", "Motion & polish", "Priority turnaround"],
+      description:
+        "For businesses ready to stand out with a premium look and more advanced features.",
+      highlights: [
+        "Custom design with better UI/UX",
+        "Animations & smooth interactions",
+        "Contact form (email integration)",
+        "Priority delivery (1–2 days)",
+        "Analytics setup",
+      ],
     },
   ],
   portfolioSection: {
@@ -105,47 +135,84 @@ export const siteConfig = {
     title: "Demos & portfolio",
     subtitle:
       "Sample layouts you can replace with real screenshots — update paths in this file and add images under /public.",
+    /** Shown below portfolio on the home page; also used on `/technology` */
+    technology: {
+      eyebrow: "Technology",
+      title: "Stack we build with",
+      subtitle:
+        "Languages, frameworks, and platforms we use across web, mobile, and backend work — swap labels anytime in this file.",
+    
+      rowTowardRight: [
+        { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs" },
+        { name: "React", icon: "https://cdn.simpleicons.org/react" },
+        { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript" },
+        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss" },
+        { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs" },
+        { name: "HTML", icon: "https://cdn.simpleicons.org/html5" },
+        { name: "Express.js", icon: "https://cdn.simpleicons.org/express" },
+        { name: "Angular", icon: "https://cdn.simpleicons.org/angular" },
+        { name: "Laravel", icon: "https://cdn.simpleicons.org/laravel" },
+      ] as const,
+    
+      rowTowardLeft: [
+        { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql" },
+        { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql" },
+        { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb" },
+        { name: "Prisma", icon: "https://cdn.simpleicons.org/prisma" },
+        { name: "Docker", icon: "https://cdn.simpleicons.org/docker" },
+        { name: "Python", icon: "https://cdn.simpleicons.org/python" },
+      ] as const,
+    },
   },
   portfolio: [
     {
-      title: "Local café — demo",
-      description: "Single-page menu, hours, and map — optimized for phones.",
-      image: "/portfolio-demo-1.svg",
+      title: "Sunrise Café Phnom Penh",
+      description:
+        "Mobile-friendly website with menu, opening hours, and Google Maps integration. Helps customers quickly find and visit the café.",
+      image: "/placeholder.png",
     },
     {
-      title: "Service business — demo",
-      description: "Clear packages, Telegram / WhatsApp CTAs, trust-focused layout.",
-      image: "/portfolio-demo-2.svg",
+      title: "Sokha Car Repair Service",
+      description:
+        "Service website with clear offerings, Telegram contact, and location map to attract nearby customers.",
+      image: "/placeholder.png",
+    },
+    {
+      title: "Modern Barber Shop",
+      description:
+        "Clean landing page with services, pricing, and gallery. Optimized for mobile booking via Telegram.",
+      image: "/placeholder.png",
     },
   ],
   whyUs: {
-    heading: "Why choose us?",
+    heading: "Why Choose EasyWeb Cambodia?",
     subtitle:
-      "We combine clear communication with delivery you can count on — for startups, SMEs, and local businesses across Cambodia.",
+      "We help small businesses get online quickly, affordably, and without confusion. Simple process. Fast results.",
+  
     cards: [
       {
-        title: "Experienced Professionals",
+        title: "Fast Delivery",
         detail:
-          "Modern stacks and sane workflows — so your website or system stays fast, secure, and easy to evolve after launch.",
-        icon: "thumbsUp" as const,
+          "Get your website ready in just 2–3 days so you can start attracting customers immediately.",
+        icon: "zap" as const,
       },
       {
-        title: "Satisfaction Guarantee",
+        title: "Affordable & Clear Pricing",
         detail:
-          "Transparent scope and checkpoints at every step — you always know what ships, when, and what it costs.",
-        icon: "handshake" as const,
-      },
-      {
-        title: "Affordable Rates",
-        detail:
-          "Packages sized for real budgets — clear tiers without enterprise overhead or surprise invoices.",
+          "No hidden fees. Simple packages designed for small business budgets.",
         icon: "badgePercent" as const,
       },
       {
-        title: "Reliable & Trustworthy",
+        title: "Easy Communication",
         detail:
-          "Easy channels (Telegram, phone, Facebook) and timelines you can plan around — with local context baked in.",
-        icon: "shield" as const,
+          "Contact us بسهولة through Telegram, phone, or Facebook. We keep everything simple and clear.",
+        icon: "messageCircle" as const,
+      },
+      {
+        title: "Built for Real Results",
+        detail:
+          "We don’t just build websites — we help your business get more customers online.",
+        icon: "trendingUp" as const,
       },
     ],
   },
@@ -153,7 +220,7 @@ export const siteConfig = {
     title: "Ready to grow your business online?",
     body: "Let's build your website or system today. We'll help you from idea to launch.",
     buttonLabel: "Start a Project",
-    href: "#contact",
+    href: "/contact",
   },
   contactSection: {
     title: "Reach out the easy way",
@@ -164,6 +231,7 @@ export const siteConfig = {
     quickLinks: [
       { label: "Home", href: "/" },
       { label: "Services", href: "/services" },
+      { label: "Portfolio", href: "/portfolio" },
       { label: "Packages", href: "/packages" },
       { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" },

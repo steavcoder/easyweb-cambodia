@@ -5,6 +5,7 @@ import { Hero } from "@/components/landing/Hero";
 import { Portfolio } from "@/components/landing/Portfolio";
 import { ServiceShowcase } from "@/components/landing/ServiceShowcase";
 import { Services } from "@/components/landing/Services";
+import { TechnologyMarquee } from "@/components/landing/TechnologyMarquee";
 import { WhyUs } from "@/components/landing/WhyUs";
 import { siteConfig } from "@/components/landing/site-config";
 
@@ -34,17 +35,18 @@ export default function Home() {
         stats={siteConfig.about.stats}
         cta={siteConfig.about.cta}
       />
-      <Services
-        eyebrow={siteConfig.pricingSection.eyebrow}
-        title={siteConfig.pricingSection.title}
-        subtitle={siteConfig.pricingSection.subtitle}
-        packages={siteConfig.pricing}
-      />
       <Portfolio
         eyebrow={siteConfig.portfolioSection.eyebrow}
         title={siteConfig.portfolioSection.title}
         subtitle={siteConfig.portfolioSection.subtitle}
         items={siteConfig.portfolio}
+      />
+      <TechnologyMarquee config={siteConfig.portfolioSection.technology} />
+      <Services
+        eyebrow={siteConfig.pricingSection.eyebrow}
+        title={siteConfig.pricingSection.title}
+        subtitle={siteConfig.pricingSection.subtitle}
+        packages={siteConfig.pricing}
       />
       <WhyUs
         heading={siteConfig.whyUs.heading}

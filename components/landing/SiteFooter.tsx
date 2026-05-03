@@ -2,7 +2,7 @@ import { Mail, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { BrandLockup, type LogoAssets } from "./BrandLogo";
-import { BRAND_GREEN } from "./hero-theme";
+import { BRAND_SURFACE_GRADIENT } from "./hero-theme";
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -51,28 +51,30 @@ export function SiteFooter({
   facebook,
   instagram,
 }: Props) {
+  const socialBtnClass =
+    "flex h-10 w-10 items-center justify-center rounded-full border-2 border-white/50 bg-white/10 text-white transition hover:bg-white hover:text-[color:var(--brand-green)]";
+
   return (
-    <footer className="border-t border-zinc-200 bg-zinc-50 px-4 py-12 dark:border-zinc-800 dark:bg-zinc-950 sm:px-6">
+    <footer
+      className="border-t border-white/20 px-4 py-12 text-white sm:px-6"
+      style={{ background: BRAND_SURFACE_GRADIENT }}
+    >
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         <div className="lg:col-span-1">
           <BrandLockup brand={brand} logo={logo} />
           {tagline ? (
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
-              {tagline}
-            </p>
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/80">{tagline}</p>
           ) : null}
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-900 dark:text-zinc-100">
-            Quick links
-          </h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Quick links</h3>
           <ul className="mt-4 space-y-2">
             {quickLinks.map((link) => (
               <li key={link.href + link.label}>
                 <Link
                   href={link.href}
-                  className="text-sm text-zinc-600 transition hover:text-[#009689] dark:text-zinc-400 dark:hover:text-[#009689]"
+                  className="text-sm text-white/85 transition hover:text-white"
                 >
                   {link.label}
                 </Link>
@@ -82,16 +84,14 @@ export function SiteFooter({
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-900 dark:text-zinc-100">
-            Contact
-          </h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Contact</h3>
           <ul className="mt-4 space-y-3">
             <li>
               <a
                 href={`mailto:${email}`}
-                className="inline-flex items-center gap-2 text-sm text-zinc-600 transition hover:text-[#009689] dark:text-zinc-400 dark:hover:text-[#009689]"
+                className="inline-flex items-center gap-2 text-sm text-white/85 transition hover:text-white"
               >
-                <Mail className="h-4 w-4 shrink-0" style={{ color: BRAND_GREEN }} aria-hidden />
+                <Mail className="h-4 w-4 shrink-0 text-white/90" aria-hidden />
                 {email}
               </a>
             </li>
@@ -100,13 +100,9 @@ export function SiteFooter({
                 href={telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-zinc-600 transition hover:text-[#009689] dark:text-zinc-400 dark:hover:text-[#009689]"
+                className="inline-flex items-center gap-2 text-sm text-white/85 transition hover:text-white"
               >
-                <MessageCircle
-                  className="h-4 w-4 shrink-0"
-                  style={{ color: BRAND_GREEN }}
-                  aria-hidden
-                />
+                <MessageCircle className="h-4 w-4 shrink-0 text-white/90" aria-hidden />
                 Telegram
               </a>
             </li>
@@ -115,9 +111,9 @@ export function SiteFooter({
                 href={whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-zinc-600 transition hover:text-[#009689] dark:text-zinc-400 dark:hover:text-[#009689]"
+                className="inline-flex items-center gap-2 text-sm text-white/85 transition hover:text-white"
               >
-                <WhatsAppIcon className="h-4 w-4 shrink-0" style={{ color: BRAND_GREEN }} />
+                <WhatsAppIcon className="h-4 w-4 shrink-0 text-white/90" />
                 WhatsApp
               </a>
             </li>
@@ -125,16 +121,13 @@ export function SiteFooter({
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-900 dark:text-zinc-100">
-            Social
-          </h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Social</h3>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link
               href={facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white transition hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800"
-              style={{ color: BRAND_GREEN }}
+              className={socialBtnClass}
               aria-label="Facebook"
             >
               <FacebookIcon className="h-5 w-5" />
@@ -143,8 +136,7 @@ export function SiteFooter({
               href={telegram}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white transition hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800"
-              style={{ color: BRAND_GREEN }}
+              className={socialBtnClass}
               aria-label="Telegram"
             >
               <MessageCircle className="h-5 w-5" strokeWidth={2} />
@@ -153,8 +145,7 @@ export function SiteFooter({
               href={whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white transition hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800"
-              style={{ color: BRAND_GREEN }}
+              className={socialBtnClass}
               aria-label="WhatsApp"
             >
               <WhatsAppIcon className="h-5 w-5" />
@@ -164,8 +155,7 @@ export function SiteFooter({
                 href={instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white transition hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800"
-                style={{ color: BRAND_GREEN }}
+                className={socialBtnClass}
                 aria-label="Instagram"
               >
                 <span className="text-lg font-semibold">in</span>
@@ -175,7 +165,7 @@ export function SiteFooter({
         </div>
       </div>
 
-      <div className="mx-auto mt-12 max-w-6xl border-t border-zinc-200 pt-8 text-center text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
+      <div className="mx-auto mt-12 max-w-6xl border-t border-white/25 pt-8 text-center text-sm text-white/75">
         © {new Date().getFullYear()} {brand}. All rights reserved.
       </div>
     </footer>

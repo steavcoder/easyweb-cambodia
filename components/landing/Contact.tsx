@@ -40,19 +40,21 @@ export function Contact({
   return (
     <section id="contact" className="scroll-mt-20 px-4 pb-16 pt-8 sm:px-6 sm:pb-28 sm:pt-10">
       <div className="mx-auto w-full max-w-5xl">
-        <h2
-          className="text-sm font-semibold uppercase tracking-wider dark:opacity-90"
-          style={{ color: BRAND_GREEN }}
-        >
-          Contact
-        </h2>
-        <p className="mt-2 max-w-xl text-pretty text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl dark:text-zinc-50">
-          {title}
-        </p>
-        <p className="mt-3 max-w-xl text-pretty text-sm leading-relaxed text-zinc-600 sm:text-base dark:text-zinc-400">
-          {subtitle}
-        </p>
-        <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
+        <header className="text-center">
+          <h2
+            className="text-sm font-semibold uppercase tracking-wider dark:opacity-90"
+            style={{ color: BRAND_GREEN }}
+          >
+            Contact
+          </h2>
+          <p className="mx-auto mt-2 max-w-2xl text-pretty text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl dark:text-zinc-50">
+            {title}
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-zinc-600 sm:text-base dark:text-zinc-400">
+            {subtitle}
+          </p>
+        </header>
+        <div className="mt-8 flex w-full flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4">
           <a
             href={`mailto:${email}`}
             className={btnOutline}

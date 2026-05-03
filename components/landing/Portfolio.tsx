@@ -14,22 +14,32 @@ type Props = {
   items: readonly Item[];
 };
 
+/** `next/image` requires `/file` for `public/` assets, not `public/file` */
+function normalizeImageSrc(src: string) {
+  const t = src.trim();
+  if (!t) return "/placeholder.png";
+  if (t.startsWith("public/")) return `/${t.slice("public/".length)}`;
+  return t;
+}
+
 export function Portfolio({ eyebrow, title, subtitle, items }: Props) {
   return (
     <section id="portfolio" className="scroll-mt-20 px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-5xl">
-        <h2
-          className="text-sm font-semibold uppercase tracking-wider dark:opacity-90"
-          style={{ color: BRAND_GREEN }}
-        >
-          {eyebrow}
-        </h2>
-        <p className="mt-2 max-w-2xl text-pretty text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-          {title}
-        </p>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-600 sm:text-base dark:text-zinc-400">
-          {subtitle}
-        </p>
+        <header className="text-center">
+          <h2
+            className="text-sm font-semibold uppercase tracking-wider dark:opacity-90"
+            style={{ color: BRAND_GREEN }}
+          >
+            {eyebrow}
+          </h2>
+          <p className="mx-auto mt-2 max-w-2xl text-pretty text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+            {title}
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-zinc-600 sm:text-base dark:text-zinc-400">
+            {subtitle}
+          </p>
+        </header>
         <div className="mt-10 grid gap-10 lg:grid-cols-2">
           {items.map((item) => (
             <figure
@@ -38,7 +48,7 @@ export function Portfolio({ eyebrow, title, subtitle, items }: Props) {
             >
               <div className="relative aspect-[1200/750] w-full bg-zinc-200 dark:bg-zinc-800">
                 <Image
-                  src={item.image}
+                  src={normalizeImageSrc(item.image)}
                   alt={item.title}
                   fill
                   className="object-cover"

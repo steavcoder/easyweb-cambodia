@@ -10,7 +10,6 @@ type Item = {
   description?: string;
   bullets?: readonly string[];
   icon: IconName;
-  iconBg: string;
 };
 
 type Props = {
@@ -34,13 +33,15 @@ export function ServiceShowcase({ titleBefore, titleHighlight, subtitle, items }
       className="scroll-mt-20 border-b border-zinc-100 bg-white px-4 py-16 sm:px-6 sm:py-20 dark:border-zinc-800 dark:bg-zinc-950"
     >
       <div className="mx-auto max-w-6xl">
-        <h2 className="text-center text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
-          <span>{titleBefore}</span>
-          <span style={{ color: BRAND_GREEN }}>{titleHighlight}</span>
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-base text-zinc-500 sm:text-lg dark:text-zinc-400">
-          {subtitle}
-        </p>
+        <header className="text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
+            <span>{titleBefore}</span>
+            <span style={{ color: BRAND_GREEN }}>{titleHighlight}</span>
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-pretty text-base text-zinc-500 sm:text-lg dark:text-zinc-400">
+            {subtitle}
+          </p>
+        </header>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item) => {
@@ -52,7 +53,7 @@ export function ServiceShowcase({ titleBefore, titleHighlight, subtitle, items }
               >
                 <div
                   className="flex h-12 w-12 items-center justify-center rounded-xl"
-                  style={{ backgroundColor: item.iconBg }}
+                  style={{ backgroundColor: BRAND_GREEN }}
                 >
                   <Icon className="h-6 w-6 text-white" strokeWidth={1.75} aria-hidden />
                 </div>

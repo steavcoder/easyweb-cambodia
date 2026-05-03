@@ -1,13 +1,23 @@
 import {
   BadgePercent,
   Handshake,
+  MessageCircle,
   ShieldCheck,
   ThumbsUp,
+  TrendingUp,
+  Zap,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { BRAND_GREEN } from "./hero-theme";
 
-type IconName = "thumbsUp" | "handshake" | "badgePercent" | "shield";
+type IconName =
+  | "thumbsUp"
+  | "handshake"
+  | "badgePercent"
+  | "shield"
+  | "zap"
+  | "messageCircle"
+  | "trendingUp";
 
 type Card = {
   title: string;
@@ -26,6 +36,9 @@ const iconMap: Record<IconName, LucideIcon> = {
   handshake: Handshake,
   badgePercent: BadgePercent,
   shield: ShieldCheck,
+  zap: Zap,
+  messageCircle: MessageCircle,
+  trendingUp: TrendingUp,
 };
 
 export function WhyUs({ heading, subtitle, cards }: Props) {
@@ -35,12 +48,14 @@ export function WhyUs({ heading, subtitle, cards }: Props) {
       className="scroll-mt-20 border-t border-zinc-200/80 bg-zinc-50/90 px-4 py-16 dark:border-zinc-800 dark:bg-zinc-950 sm:px-6 sm:py-20"
     >
       <div className="mx-auto max-w-6xl">
-        <h2 className="text-center text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
-          {heading}
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-relaxed text-zinc-500 sm:text-base dark:text-zinc-400">
-          {subtitle}
-        </p>
+        <header className="text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-white">
+            {heading}
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-zinc-500 sm:text-base dark:text-zinc-400">
+            {subtitle}
+          </p>
+        </header>
 
         <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((item) => {

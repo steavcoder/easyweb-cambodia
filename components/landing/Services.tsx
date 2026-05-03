@@ -22,16 +22,20 @@ export function Services({ eyebrow, title, subtitle, packages }: Props) {
       className="scroll-mt-20 border-y border-teal-950/10 bg-teal-50/40 px-4 py-16 dark:border-teal-500/10 dark:bg-teal-950/20 sm:px-6 sm:py-20"
     >
       <div className="mx-auto max-w-5xl">
-        <h2
-          className="text-sm font-semibold uppercase tracking-wider dark:opacity-90"
-          style={{ color: BRAND_GREEN }}
-        >
-          {eyebrow}
-        </h2>
-        <p className="mt-2 max-w-xl text-pretty text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-          {title}
-        </p>
-        <p className="mt-3 max-w-xl text-pretty text-zinc-600 dark:text-zinc-400">{subtitle}</p>
+        <header className="text-center">
+          <h2
+            className="text-sm font-semibold uppercase tracking-wider dark:opacity-90"
+            style={{ color: BRAND_GREEN }}
+          >
+            {eyebrow}
+          </h2>
+          <p className="mx-auto mt-2 max-w-2xl text-pretty text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+            {title}
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-pretty text-zinc-600 dark:text-zinc-400">
+            {subtitle}
+          </p>
+        </header>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {packages.map((pkg) => (
             <article
