@@ -2,12 +2,24 @@
  * Site copy and links — single source of truth for the landing page.
  * Update phone, WhatsApp, and email before going live if placeholders remain.
  */
+
+/** Hero line 3 — rotating typewriter words */
+const ROTATING_HEADLINE_WORDS = ["Inspire", "Innovate", "Impact", "Deliver"] as const;
+
 export const siteConfig = {
   brand: "EasyWeb Cambodia",
+  /** Header/footer — paths under `public/`; mobile below `md`, web from `md` up */
+  logo: {
+    webSrc: "/easyweb-logo.png",
+    mobileSrc: "/easyweb-mobile.png",
+    alt: "EasyWeb Cambodia",
+  },
   hero: {
-    headlineBefore: "Build, Grow, and ",
-    headlineHighlight: "Scale Your Business Online",
-    headlineAfter: "",
+    tagline: "what happens next.",
+    line1: "We Design",
+    line2: "We Develop",
+    line3Prefix: "We ",
+    rotatingWords: ROTATING_HEADLINE_WORDS,
     subline:
       "We help businesses in Cambodia and beyond create modern websites, systems, and digital solutions that drive real results.",
     trustLine: "Trusted by startups, SMEs, and local businesses across Cambodia.",
@@ -59,7 +71,7 @@ export const siteConfig = {
       { value: "1+", label: "Years of focus" },
       { value: "25+", label: "Businesses served" },
     ] as const,
-    cta: { label: "Learn more", href: "/our-process" },
+    cta: { label: "Learn more", href: "/packages" },
   },
   pricingSection: {
     eyebrow: "Packages",
@@ -137,15 +149,6 @@ export const siteConfig = {
       },
     ],
   },
-  process: {
-    eyebrow: "Our process",
-    title: "How we work — from first message to launch",
-    helper:
-      "Clear steps from brief to launch — we keep communication simple so you always know what happens next.",
-    line1: "We Design.",
-    line2: "We Develop.",
-    rotatingWords: ["Inspire", "Innovate", "Impact", "Deliver"] as const,
-  },
   ctaBand: {
     title: "Ready to grow your business online?",
     body: "Let's build your website or system today. We'll help you from idea to launch.",
@@ -160,11 +163,10 @@ export const siteConfig = {
     tagline: "Websites, apps, and systems for growing businesses in Cambodia.",
     quickLinks: [
       { label: "Home", href: "/" },
-      { label: "Services", href: "/#service-showcase" },
-      { label: "Packages", href: "/#services" },
-      { label: "About", href: "/#about" },
-      { label: "Our process", href: "/our-process" },
-      { label: "Contact", href: "/#contact" },
+      { label: "Services", href: "/services" },
+      { label: "Packages", href: "/packages" },
+      { label: "About", href: "/about" },
+      { label: "Contact", href: "/contact" },
     ] as const,
   },
   contact: {

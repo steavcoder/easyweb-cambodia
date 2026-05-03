@@ -78,7 +78,7 @@ export function ServiceShowcase({ titleBefore, titleHighlight, subtitle, items }
                   </p>
                 )}
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="group mt-6 inline-flex w-fit items-center justify-center gap-1.5 rounded-full px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-110"
                   style={{ backgroundColor: BRAND_GREEN }}
                 >

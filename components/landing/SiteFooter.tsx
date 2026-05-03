@@ -1,7 +1,7 @@
 import { Mail, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { BrandLockup } from "./BrandLogo";
+import { BrandLockup, type LogoAssets } from "./BrandLogo";
 import { BRAND_GREEN } from "./hero-theme";
 
 function FacebookIcon({ className }: { className?: string }) {
@@ -30,6 +30,7 @@ type QuickLink = { href: string; label: string };
 
 type Props = {
   brand: string;
+  logo: LogoAssets;
   tagline?: string;
   quickLinks: readonly QuickLink[];
   email: string;
@@ -41,6 +42,7 @@ type Props = {
 
 export function SiteFooter({
   brand,
+  logo,
   tagline,
   quickLinks,
   email,
@@ -53,7 +55,7 @@ export function SiteFooter({
     <footer className="border-t border-zinc-200 bg-zinc-50 px-4 py-12 dark:border-zinc-800 dark:bg-zinc-950 sm:px-6">
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         <div className="lg:col-span-1">
-          <BrandLockup brand={brand} />
+          <BrandLockup brand={brand} logo={logo} />
           {tagline ? (
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
               {tagline}

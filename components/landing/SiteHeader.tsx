@@ -4,21 +4,20 @@ import { ArrowRight, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BrandLockup } from "./BrandLogo";
+import { BrandLockup, type LogoAssets } from "./BrandLogo";
 import { BRAND_GREEN } from "./hero-theme";
 
-type Props = { brand: string };
+type Props = { brand: string; logo: LogoAssets };
 
 const nav: { href: string; label: string; activeOn?: (path: string) => boolean }[] = [
   { href: "/", label: "Home", activeOn: (p) => p === "/" },
-  { href: "/#about", label: "About" },
-  { href: "/#service-showcase", label: "Services" },
-  { href: "/#services", label: "Packages" },
-  { href: "/our-process", label: "Our process" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/about", label: "About", activeOn: (p) => p === "/about" },
+  { href: "/services", label: "Services", activeOn: (p) => p === "/services" },
+  { href: "/packages", label: "Packages", activeOn: (p) => p === "/packages" },
+  { href: "/contact", label: "Contact", activeOn: (p) => p === "/contact" },
 ];
 
-export function SiteHeader({ brand }: Props) {
+export function SiteHeader({ brand, logo }: Props) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -37,10 +36,13 @@ export function SiteHeader({ brand }: Props) {
 
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-100 bg-white/95 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/95">
-      <div className="relative mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-3 sm:gap-3 sm:px-6 sm:py-4">
-        <BrandLockup brand={brand} className="max-w-[min(100%,calc(100vw-11rem))] sm:max-w-none" />
+      {/* Mobile: logo | actions. md+: three columns — logo | nav | CTA (no overlap) */}
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 px-4 py-3.5 sm:gap-x-4 sm:px-6 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-x-6 md:py-5">
+        <div className="min-w-0 justify-self-start">
+          <BrandLockup variant="header" brand={brand} logo={logo} priority />
+        </div>
 
-        <nav className="absolute left-1/2 hidden -translate-x-1/2 md:flex md:items-center md:gap-1 lg:gap-2">
+        <nav className="hidden md:col-start-2 md:flex md:items-center md:justify-self-center md:gap-1 lg:gap-2">
           {nav.map((item) => {
             const active = item.activeOn ? item.activeOn(pathname) : false;
             return (
@@ -60,9 +62,9 @@ export function SiteHeader({ brand }: Props) {
           })}
         </nav>
 
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="col-start-2 flex shrink-0 items-center justify-self-end gap-2 md:col-start-3">
           <Link
-            href="/#contact"
+            href="/contact"
             className="btn-contact-outline group inline-flex items-center justify-center gap-1 rounded-full px-3 py-2 text-xs font-semibold shadow-sm whitespace-nowrap sm:gap-1.5 sm:px-5 sm:py-2.5 sm:text-sm"
           >
             Contact Us

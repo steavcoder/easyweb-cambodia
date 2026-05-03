@@ -29,6 +29,11 @@ body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
+/* Hero cinematic grain — SVG turbulence tile */
+.hero-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
 @keyframes our-process-cursor {
   0%,
   100% {
@@ -69,5 +74,29 @@ body {
 }
 
 .btn-contact-outline:hover svg {
+  color: #ffffff;
+}
+
+/* Hero (dark) — light outline, same hover fill as .btn-contact-outline */
+.btn-contact-outline-on-dark {
+  border: 2px solid rgba(255, 255, 255, 0.38);
+  color: #f4f4f5;
+  background-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 32px -12px rgba(0, 150, 137, 0.25);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-contact-outline-on-dark:hover {
+  background-color: var(--brand-green);
+  border-color: var(--brand-green);
+  color: #ffffff;
+  box-shadow: 0 10px 32px -12px rgba(0, 150, 137, 0.5);
+}
+
+.btn-contact-outline-on-dark:hover svg {
   color: #ffffff;
 }
